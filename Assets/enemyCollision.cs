@@ -10,6 +10,7 @@ public class enemyCollision : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
+		if(!col.CompareTag("Enemy")) return;
 		playerState.health--;
 		playerState.disabled = true;
 		hurt = true;
