@@ -13,13 +13,26 @@ public class playerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(edgeDetection.panning == true) return;
+		if(enemyCollision.hurt)
+		{
+			enemyCollision.timer--;
+			if(enemyCollision.timer == 0)
+			{
+				enemyCollision.timer = 20;
+				enemyCollision.hurt = false;
+				playerState.disabled = false;
+			}
+			return;
+		}
+		if(playerState.disabled) return;
+
 		var vertical = Input.GetAxis ("Vertical");
 		var horizontal = Input.GetAxis ("Horizontal");
 		int curr_direction = animator.GetInteger ("Direction");
 
 		if (vertical > 0) 
 		{
+			playerState.facing = 2;
 			if(curr_direction == 2 && timer == 0)
 			{
 				animator.SetInteger("Direction", 6);
@@ -42,6 +55,7 @@ public class playerController : MonoBehaviour {
 		}
 		if (vertical < 0) 
 		{
+			playerState.facing = 0;
 			if(curr_direction == 0 && timer == 0)
 			{
 				animator.SetInteger("Direction", 4);
@@ -64,6 +78,7 @@ public class playerController : MonoBehaviour {
 		}
 		if (horizontal > 0) 
 		{
+			playerState.facing = 3;
 			if(curr_direction == 3 && timer == 0)
 			{
 				animator.SetInteger("Direction", 7);
@@ -86,6 +101,7 @@ public class playerController : MonoBehaviour {
 		}
 		if (horizontal < 0) 
 		{
+			playerState.facing = 1;
 			if(curr_direction == 1 && timer == 0)
 			{
 				animator.SetInteger("Direction", 5);

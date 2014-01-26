@@ -11,7 +11,7 @@ public class playerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(edgeDetection.panning == true) return;
+		if(playerState.disabled == true) return;
 		float h = Input.GetAxis ("Horizontal");
 		float v = Input.GetAxis ("Vertical");
 
