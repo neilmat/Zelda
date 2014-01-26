@@ -10,11 +10,14 @@ public class enemyCollision : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
+		int direction = getDirection (col);
+		if(playerState.attacking && direction == playerState.facing) return;
 		if(!col.CompareTag("Enemy")) return;
+
 		playerState.health--;
 		playerState.disabled = true;
 		hurt = true;
-		rebound(getDirection(col));
+		rebound(direction);
 	}
 
 	void rebound(int direction)

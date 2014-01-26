@@ -5,14 +5,27 @@ public class playerController : MonoBehaviour {
 
 	private Animator animator;
 	private int timer;
+	private float attackTimer;
+	private BoxCollider2D sword;
 	// Use this for initialization
 	void Start () {
 		animator = this.GetComponent<Animator>();
 		timer = 20;
+		attackTimer = 0;
+		sword = this.gameObject.AddComponent<BoxCollider2D> ();
+		sword.isTrigger = true;
+		sheathe ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(Input.GetKeyDown(KeyCode.X))
+		{
+			playerState.attacking = true;
+			animator.SetBool("Attacking", true);
+			extendSword();
+			playerState.disabled = true;
+		}
 		if(enemyCollision.hurt)
 		{
 			enemyCollision.timer--;
@@ -23,6 +36,19 @@ public class playerController : MonoBehaviour {
 				playerState.disabled = false;
 			}
 			return;
+		}
+
+		if(playerState.attacking)
+		{
+			attackTimer += Time.deltaTime;
+			if(attackTimer > .25)
+			{
+				playerState.attacking = false;
+				attackTimer = 0;
+				animator.SetBool("Attacking", false);
+				sheathe ();
+				playerState.disabled = false;
+			}
 		}
 		if(playerState.disabled) return;
 
@@ -123,5 +149,28 @@ public class playerController : MonoBehaviour {
 			}
 		}
 
+	}
+
+	void extendSword()
+	{
+		Vector2 center = sword.center;
+		Vector2 size = sword.size;
+		size.x = 1;
+		size.y = 1;
+		if(playerState.facing == 0) center.y = -.5f;
+		else if(playerState.facing == 1) center.x = -.5f;
+		else if(playerState.facing == 2) center.y = .5f;
+		else if(playerState.facing == 3) center.x = .5f;
+		sword.center = center;
+		sword.size = size;
+	}
+
+	void sheathe()
+	{
+		Vector2 zero = sword.size;
+		zero.x = 0;
+		zero.y = 0;
+		sword.size = zero;
+		sword.center = zero;
 	}
 }
