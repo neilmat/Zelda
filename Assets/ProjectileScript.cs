@@ -9,8 +9,8 @@ public class ProjectileScript : MonoBehaviour
 	{
 		rigidbody2D.velocity = vel;
 	}
-	void Start()
-	{
-		Destroy(gameObject, 5);
+
+	void OnBecameInvisible(){
+		Destroy (gameObject);
 	}
 }
