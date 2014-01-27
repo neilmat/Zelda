@@ -17,6 +17,7 @@ public class enemyCollision : MonoBehaviour {
 
 	void projectileTouch(int direction, Collider2D col)
 	{
+		/*
 		if(direction != playerState.facing || playerState.attacking)
 		{
 			playerState.health -= col.gameObject.GetComponent<ProjectileScript>().damage;
@@ -28,6 +29,19 @@ public class enemyCollision : MonoBehaviour {
 			if(playerState.facing % 2 == 1) vel.x = -vel.x;
 			else vel.y = -vel.y;
 			col.gameObject.rigidbody2D.velocity = vel;
+		}
+		*/
+		if(direction == playerState.facing && !playerState.attacking)
+		{
+			Vector2 vel = col.gameObject.rigidbody2D.velocity;
+			if(playerState.facing % 2 == 1) vel.x = -vel.x;
+			else vel.y = -vel.y;
+			col.gameObject.rigidbody2D.velocity = vel;
+		}
+		else
+		{
+			playerState.health -= col.gameObject.GetComponent<ProjectileScript>().damage;
+			Destroy(col.gameObject);
 		}
 	}
 
