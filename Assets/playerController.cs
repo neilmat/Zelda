@@ -24,7 +24,6 @@ public class playerController : MonoBehaviour {
 			playerState.attacking = true;
 			animator.SetBool("Attacking", true);
 			extendSword();
-			playerState.disabled = true;
 		}
 		if(enemyCollision.hurt)
 		{
@@ -47,7 +46,6 @@ public class playerController : MonoBehaviour {
 				attackTimer = 0;
 				animator.SetBool("Attacking", false);
 				sheathe ();
-				playerState.disabled = false;
 			}
 		}
 		if(playerState.disabled) return;
@@ -163,6 +161,8 @@ public class playerController : MonoBehaviour {
 		else if(playerState.facing == 3) center.x = .5f;
 		sword.center = center;
 		sword.size = size;
+		playerState.disabled = true;
+		rigidbody2D.velocity = Vector2.zero;
 	}
 
 	void sheathe()
@@ -172,5 +172,6 @@ public class playerController : MonoBehaviour {
 		zero.y = 0;
 		sword.size = zero;
 		sword.center = zero;
+		playerState.disabled = false;
 	}
 }

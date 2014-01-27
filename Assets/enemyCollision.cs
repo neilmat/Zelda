@@ -11,15 +11,35 @@ public class enemyCollision : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		int direction = getDirection (col);
-		if(playerState.attacking && direction == playerState.facing) return;
-		if(!col.CompareTag("Enemy")) return;
+		if(col.CompareTag("Enemy")) enemyTouch(direction);
+		else if(col.CompareTag("Projectile")) projectileTouch(direction, col);
+	}
 
+	void projectileTouch(int direction, Collider2D col)
+	{
+		if(direction != playerState.facing || playerState.attacking)
+		{
+			playerState.health -= col.gameObject.GetComponent<ProjectileScript>().damage;
+			Destroy(col.gameObject);
+		}
+		else
+		{
+			Vector2 vel = col.gameObject.rigidbody2D.velocity;
+			if(playerState.facing % 2 == 1) vel.x = -vel.x;
+			else vel.y = -vel.y;
+			col.gameObject.rigidbody2D.velocity = vel;
+		}
+	}
+
+	void enemyTouch(int direction)
+	{
+		if(playerState.attacking && direction == playerState.facing) return;
+		
 		playerState.health--;
 		playerState.disabled = true;
 		hurt = true;
 		rebound(direction);
 	}
-
 	void rebound(int direction)
 	{
 		Vector2 vel = rigidbody2D.velocity;

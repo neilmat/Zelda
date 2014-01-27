@@ -9,7 +9,7 @@ public class playerState : MonoBehaviour {
 	public static bool attacking = false;
 
 	void Update(){
-		if(disabled) this.gameObject.collider2D.isTrigger = true;
+		if(edgeDetection.panning) this.gameObject.collider2D.isTrigger = true;
 		else this.gameObject.collider2D.isTrigger = false;
 	}
 }

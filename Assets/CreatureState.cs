@@ -10,7 +10,7 @@ public class CreatureState : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if(!col.CompareTag("Player")) return;
+		if(!col.CompareTag("Player") || !playerState.attacking) return;
 		health--;
 		if(health == 0) Destroy(this.gameObject);
 	}

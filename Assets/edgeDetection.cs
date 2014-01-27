@@ -3,7 +3,7 @@ using System.Collections;
 
 public class edgeDetection : MonoBehaviour {
 
-	private bool panning;
+	public static bool panning;
 	private int pan_direction;
 	// Use this for initialization
 	void Start () {
