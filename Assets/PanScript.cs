@@ -5,7 +5,7 @@ public class PanScript : MonoBehaviour {
 
 	// Use this for initialization
 	private float panSpeed = .05f;
-	private bool panning;
+	public static bool panning;
 	public Vector3 panVector = Vector3.zero;
 	void Start () {
 		panning = false;

@@ -3,10 +3,12 @@ using System.Collections;
 
 public class OktorokState : MonoBehaviour {
 	private float attack_timer;
+	public int speed = 7;
+
 	// Use this for initialization
 	void Start () {
-		CreatureState cs = this.gameObject.GetComponent<CreatureState> ();
-		cs.health = 1;
+		//Health cs = this.gameObject.GetComponent<Health> ();
+		//cs.health = 1;
 		attack_timer = 3;
 	}
 	
@@ -25,10 +27,10 @@ public class OktorokState : MonoBehaviour {
 		int direction = this.gameObject.GetComponent<Animator> ().GetInteger ("Direction");
 		Vector2 vel = Vector2.zero;
 
-		if(direction == 0) vel.y = -5;
-		else if(direction == 1) vel.x = -5;
-		else if(direction == 2) vel.y = 5;
-		else if(direction == 3) vel.x = 5;
+		if(direction == 0) vel.y = -speed;
+		else if(direction == 1) vel.x = -speed;
+		else if(direction == 2) vel.y = speed;
+		else if(direction == 3) vel.x = speed;
 
 		this.gameObject.GetComponent<FireProjectile> ().fire (vel);
 	}

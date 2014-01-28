@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CreatureState : MonoBehaviour {
+public class Health : MonoBehaviour {
 
 	public int health;
 

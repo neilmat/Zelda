@@ -8,29 +8,15 @@ public class enemyCollision : MonoBehaviour {
 	public static int timer = 20;
 	// Use this for initialization
 
-	void OnTriggerEnter2D(Collider2D col)
+	void OnCollisionEnter2D(Collision2D col)
 	{
 		int direction = getDirection (col);
-		if(col.CompareTag("Enemy")) enemyTouch(direction);
-		else if(col.CompareTag("Projectile")) projectileTouch(direction, col);
+		if(col.gameObject.CompareTag("Enemy")) enemyTouch(direction);
+		else if(col.gameObject.CompareTag("Projectile")) projectileTouch(direction, col);
 	}
 
-	void projectileTouch(int direction, Collider2D col)
+	void projectileTouch(int direction, Collision2D col)
 	{
-		/*
-		if(direction != playerState.facing || playerState.attacking)
-		{
-			playerState.health -= col.gameObject.GetComponent<ProjectileScript>().damage;
-			Destroy(col.gameObject);
-		}
-		else
-		{
-			Vector2 vel = col.gameObject.rigidbody2D.velocity;
-			if(playerState.facing % 2 == 1) vel.x = -vel.x;
-			else vel.y = -vel.y;
-			col.gameObject.rigidbody2D.velocity = vel;
-		}
-		*/
 		if(direction == playerState.facing && !playerState.attacking)
 		{
 			Vector2 vel = col.gameObject.rigidbody2D.velocity;
@@ -56,6 +42,7 @@ public class enemyCollision : MonoBehaviour {
 	}
 	void rebound(int direction)
 	{
+		Physics2D.IgnoreLayerCollision (11, 8, true);
 		Vector2 vel = rigidbody2D.velocity;
 		vel.x = vel.y = 0;
 		int flip = 1;
@@ -69,7 +56,7 @@ public class enemyCollision : MonoBehaviour {
 		rigidbody2D.velocity = vel;
 	}
 
-	int getDirection(Collider2D col)
+	int getDirection(Collision2D col)
 	{
 		Vector2 pos = this.gameObject.transform.position - col.gameObject.transform.position;
 		Vector2 npos = pos.normalized;

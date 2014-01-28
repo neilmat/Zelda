@@ -19,12 +19,6 @@ public class playerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.X))
-		{
-			playerState.attacking = true;
-			animator.SetBool("Attacking", true);
-			extendSword();
-		}
 		if(enemyCollision.hurt)
 		{
 			enemyCollision.timer--;
@@ -33,6 +27,7 @@ public class playerController : MonoBehaviour {
 				enemyCollision.timer = 20;
 				enemyCollision.hurt = false;
 				playerState.disabled = false;
+				Physics2D.IgnoreLayerCollision (11, 8, false);
 			}
 			return;
 		}
@@ -49,6 +44,13 @@ public class playerController : MonoBehaviour {
 			}
 		}
 		if(playerState.disabled) return;
+
+		if(Input.GetKeyDown(KeyCode.X))
+		{
+			playerState.attacking = true;
+			animator.SetBool("Attacking", true);
+			extendSword();
+		}
 
 		var vertical = Input.GetAxis ("Vertical");
 		var horizontal = Input.GetAxis ("Horizontal");
@@ -155,6 +157,8 @@ public class playerController : MonoBehaviour {
 		Vector2 size = sword.size;
 		size.x = 1;
 		size.y = 1;
+		if(playerState.facing % 2 == 0) size.x = .4f;
+		else size.y = .4f;
 		if(playerState.facing == 0) center.y = -.5f;
 		else if(playerState.facing == 1) center.x = -.5f;
 		else if(playerState.facing == 2) center.y = .5f;
