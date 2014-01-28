@@ -17,7 +17,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400006}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Oktorok
   m_TagString: Enemy
   m_Icon: {fileID: 0}
