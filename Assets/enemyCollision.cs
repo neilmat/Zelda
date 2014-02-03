@@ -28,6 +28,9 @@ public class enemyCollision : MonoBehaviour {
 		{
 			playerState.health -= col.gameObject.GetComponent<ProjectileScript>().damage;
 			Destroy(col.gameObject);
+			playerState.disabled = true;
+			hurt = true;
+			rebound(direction);
 		}
 	}
 

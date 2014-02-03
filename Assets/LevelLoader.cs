@@ -8,7 +8,7 @@ public class LevelLoader : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Sprite[] sprites = Resources.LoadAll<Sprite>("zelda-tiles");
-		string map_txt = File.ReadAllText("Assets/overworld.map");;
+		string map_txt = File.ReadAllText("Assets/overworld.map");
 		string [] rows = map_txt.Split('\n');
 		for (int i=0;i<rows.Length;i++){
 			string [] cols = rows[i].Split(' ');
