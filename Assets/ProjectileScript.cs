@@ -10,6 +10,11 @@ public class ProjectileScript : MonoBehaviour
 		rigidbody2D.velocity = vel;
 	}
 
+	void Update()
+	{
+		if(PanScript.panning)Destroy (gameObject);
+	}
+
 	void OnBecameInvisible(){
 		Destroy (gameObject);
 	}

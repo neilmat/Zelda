@@ -7,5 +7,9 @@ public class SpawnPointActivation : Activation {
 	{
 		gameObject.GetComponent<spawnScript> ().spawn ();
 	}
-	
+
+	public override void deactivate()
+	{
+
+	}
 }

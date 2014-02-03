@@ -27,7 +27,7 @@ public class playerController : MonoBehaviour {
 				enemyCollision.timer = 20;
 				enemyCollision.hurt = false;
 				playerState.disabled = false;
-				Physics2D.IgnoreLayerCollision (11, 8, false);
+				Physics2D.IgnoreLayerCollision (8, 11, false);
 			}
 			return;
 		}

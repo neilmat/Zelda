@@ -42,7 +42,7 @@ public class enemyCollision : MonoBehaviour {
 	}
 	void rebound(int direction)
 	{
-		Physics2D.IgnoreLayerCollision (11, 8, true);
+		Physics2D.IgnoreLayerCollision (8, 11, true);
 		Vector2 vel = rigidbody2D.velocity;
 		vel.x = vel.y = 0;
 		int flip = 1;

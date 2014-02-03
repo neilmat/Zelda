@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: EnemyAnimator
+  m_Name: Boktorok
   serializedVersion: 2
   m_AnimatorParameters:
   - m_Name: Direction
@@ -770,16 +770,23 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110285260}
-      second:
-      - {fileID: 110113108}
-      - {fileID: 110148483}
-      - {fileID: 110176579}
-      - {fileID: 110164366}
+      first: {fileID: 0}
+      second: []
     data:
-      first: {fileID: 110258581}
+      first: {fileID: 110200000}
       second:
-      - {fileID: 110117794}
+      - {fileID: 110139942}
+      - {fileID: 110156468}
+      - {fileID: 110149641}
+      - {fileID: 110159795}
+    data:
+      first: {fileID: 110232705}
+      second:
+      - {fileID: 110130638}
+    data:
+      first: {fileID: 110234594}
+      second:
+      - {fileID: 110192231}
     data:
       first: {fileID: 110241372}
       second:
@@ -792,39 +799,23 @@ StateMachine:
       - {fileID: 110192051}
       - {fileID: 110192453}
     data:
+      first: {fileID: 110258581}
+      second:
+      - {fileID: 110117794}
+    data:
+      first: {fileID: 110285260}
+      second:
+      - {fileID: 110113108}
+      - {fileID: 110148483}
+      - {fileID: 110176579}
+      - {fileID: 110164366}
+    data:
       first: {fileID: 110293256}
       second:
       - {fileID: 110100000}
       - {fileID: 110120312}
       - {fileID: 110184032}
       - {fileID: 110167525}
-    data:
-      first: {fileID: 110232705}
-      second:
-      - {fileID: 110130638}
-    data:
-      first: {fileID: 110234594}
-      second:
-      - {fileID: 110192231}
-    data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 110200000}
-      second:
-      - {fileID: 110139942}
-      - {fileID: 110156468}
-      - {fileID: 110149641}
-      - {fileID: 110159795}
-    data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 0}
-      second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 732, y: -324, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

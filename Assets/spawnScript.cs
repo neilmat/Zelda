@@ -7,19 +7,29 @@ public class spawnScript : MonoBehaviour {
 	public int start_facing = 0;
 	private float timer;
 	private bool start;
+	private bool effect_done = false;
 	// Use this for initialization
-	public void spawn () {
+	public void OnBecameVisible () {
 		timer = 0;
-		var effect = Instantiate (effectPrefab)as Transform;
-		effect.position = transform.position;
-		Destroy (effect.gameObject, .75f);
 		start = true;
 	}
+
+	public void spawn (){
+		}
 	
 	// Update is called once per frame
 	void Update () {
-		if(start && gameObject.GetComponent<ActivatorScript>().active) timer += Time.deltaTime;
-		if(timer > .75)
+		if(!start || PanScript.panning) return;
+		timer += Time.deltaTime;
+		if(!effect_done)
+		{
+			var effect = Instantiate (effectPrefab)as Transform;
+			effect.position = transform.position;
+			Destroy (effect.gameObject, .75f);
+			effect_done = true;
+		}
+
+		if(timer > .75f)
 		{
 			var spawn = Instantiate(spawnPrefab) as Transform;
 			spawn.position = transform.position;

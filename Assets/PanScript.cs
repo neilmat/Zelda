@@ -4,7 +4,7 @@ using System.Collections;
 public class PanScript : MonoBehaviour {
 
 	// Use this for initialization
-	private float panSpeed = .05f;
+	private float panSpeed = .15f;
 	public static bool panning;
 	public Vector3 panVector = Vector3.zero;
 	void Start () {
@@ -31,11 +31,13 @@ public class PanScript : MonoBehaviour {
 			else if(playerState.facing == 1) panVector.x = -panSpeed;
 			else if(playerState.facing == 2) panVector.y = panSpeed;
 			else if(playerState.facing == 3) panVector.x = panSpeed;
+			Physics2D.IgnoreLayerCollision(8, 11, true);
 		}
 		else
 		{
 			panning = false;
 			playerState.disabled = false;
+			Physics2D.IgnoreLayerCollision(8, 11, false);
 		}
 	}
 }
