@@ -72,5 +72,149 @@ TextureImporter:
         height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
+    - name: NES - Legend of Zelda The - Overworld Enemies_3
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: NES - Legend of Zelda The - Overworld Enemies_4
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 48
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: NES - Legend of Zelda The - Overworld Enemies_5
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 48
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: NES - Legend of Zelda The - Overworld Enemies_6
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: NES - Legend of Zelda The - Overworld Enemies_7
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: NES - Legend of Zelda The - Overworld Enemies_8
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: NES - Legend of Zelda The - Overworld Enemies_9
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: NES - Legend of Zelda The - Overworld Enemies_10
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: NES - Legend of Zelda The - Overworld Enemies_11
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: NES - Legend of Zelda The - Overworld Enemies_12
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: NES - Legend of Zelda The - Overworld Enemies_13
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: NES - Legend of Zelda The - Overworld Enemies_14
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: NES - Legend of Zelda The - Overworld Enemies_15
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: NES - Legend of Zelda The - Overworld Enemies_16
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 48
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: NES - Legend of Zelda The - Overworld Enemies_17
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 49
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: NES - Legend of Zelda The - Overworld Enemies_18
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
   spritePackingTag: 
   userData: 

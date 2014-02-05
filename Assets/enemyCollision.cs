@@ -13,6 +13,16 @@ public class enemyCollision : MonoBehaviour {
 		int direction = getDirection (col);
 		if(col.gameObject.CompareTag("Enemy")) enemyTouch(direction);
 		else if(col.gameObject.CompareTag("Projectile")) projectileTouch(direction, col);
+		else if(col.gameObject.CompareTag("UnblockableProjectile")) takeProjectileDamage(direction, col);
+	}
+
+	void takeProjectileDamage(int direction, Collision2D col)
+	{
+		playerState.health -= col.gameObject.GetComponent<ProjectileScript>().damage;
+		Destroy(col.gameObject);
+		playerState.disabled = true;
+		hurt = true;
+		rebound(direction);
 	}
 
 	void projectileTouch(int direction, Collision2D col)
@@ -26,11 +36,7 @@ public class enemyCollision : MonoBehaviour {
 		}
 		else
 		{
-			playerState.health -= col.gameObject.GetComponent<ProjectileScript>().damage;
-			Destroy(col.gameObject);
-			playerState.disabled = true;
-			hurt = true;
-			rebound(direction);
+			takeProjectileDamage(direction, col);
 		}
 	}
 
