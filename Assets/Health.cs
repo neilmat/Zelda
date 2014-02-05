@@ -4,7 +4,7 @@ using System.Collections;
 public class Health : MonoBehaviour {
 
 	public int health;
-
+	public Transform itemPrefab;
 	public void setHealth(int health_){
 		health = health_;
 	}
@@ -12,7 +12,21 @@ public class Health : MonoBehaviour {
 	{
 		if(!col.CompareTag("Player") || !playerState.attacking) return;
 		health--;
-		if(health == 0) Destroy(this.gameObject);
+		if(health == 0) 
+		{
+			drop();
+			Destroy(this.gameObject);
+		}
+	}
+
+	private void drop()
+	{
+		int rate = RandomNumberGenerator.getRandomNumber (1, 2);
+		if(rate == 1)
+		{
+			var item = Instantiate (itemPrefab) as Transform;
+			item.position = transform.position;
+		}
 	}
 }
 
