@@ -32,12 +32,14 @@ public class PanScript : MonoBehaviour {
 			else if(playerState.facing == 2) panVector.y = panSpeed;
 			else if(playerState.facing == 3) panVector.x = panSpeed;
 			Physics2D.IgnoreLayerCollision(8, 11, true);
+			Physics2D.IgnoreLayerCollision(8, 13, true);
 		}
 		else
 		{
 			panning = false;
 			playerState.disabled = false;
 			Physics2D.IgnoreLayerCollision(8, 11, false);
+			Physics2D.IgnoreLayerCollision(8, 13, true);
 		}
 	}
 }
