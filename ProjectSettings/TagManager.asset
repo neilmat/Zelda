@@ -5,6 +5,7 @@ TagManager:
   tags:
   - Enemy
   - Projectile
+  - UnblockableProjectile
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -19,8 +20,8 @@ TagManager:
   User Layer 10: Activator
   User Layer 11: Link
   User Layer 12: Collectible
-  User Layer 13: 
-  User Layer 14: 
+  User Layer 13: Container
+  User Layer 14: EnemyProjectile
   User Layer 15: 
   User Layer 16: 
   User Layer 17: 
