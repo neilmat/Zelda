@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: RMoblinAnimator
+  m_Name: BMoblinAnimator
   serializedVersion: 2
   m_AnimatorParameters:
   - m_Name: Direction
@@ -593,7 +593,7 @@ State:
   m_Speed: 5
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 322b554173a75ed49ad1f146bcc5c8b6, type: 2}
+  - {fileID: 7400000, guid: ee00434a013e2b143ad2958a21709ca8, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 504, y: 60, z: 0}
   m_IKOnFeet: 0
@@ -638,7 +638,7 @@ State:
   m_Speed: 5
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 91a5b334302ab364e9e164d2a2d568cd, type: 2}
+  - {fileID: 7400000, guid: 918c506ca3e5e6f44afdf2804d1802b1, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 504, y: -348, z: 0}
   m_IKOnFeet: 0
@@ -653,7 +653,7 @@ State:
   m_Speed: 5
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 3daf8b6bbe49e9a4bbeddb6cf91f8596, type: 2}
+  - {fileID: 7400000, guid: 8588efa0232253a4eb1f412471951f1e, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 1140, y: -84, z: 0}
   m_IKOnFeet: 0
@@ -683,7 +683,7 @@ State:
   m_Speed: 5
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: dc3dfd4f9abdffe4cbc8d53938573435, type: 2}
+  - {fileID: 7400000, guid: 8e75781b21210894187afbc1f189d186, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: -108, y: -96, z: 0}
   m_IKOnFeet: 0
@@ -698,7 +698,7 @@ State:
   m_Speed: 5
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 2149d6584d22dac4ea724a377bdfd526, type: 2}
+  - {fileID: 7400000, guid: b039414ae459dfa4aa81f888a4536823, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 216, y: -96, z: 0}
   m_IKOnFeet: 0
@@ -713,7 +713,7 @@ State:
   m_Speed: 5
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 9854556e979011f4fa34386ce990b2cf, type: 2}
+  - {fileID: 7400000, guid: 63855b2400fceb94abf058d002ada521, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 504, y: 204, z: 0}
   m_IKOnFeet: 0
@@ -728,7 +728,7 @@ State:
   m_Speed: 5
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: b89d0b37aa7b1bb4082e12bfa5bddb25, type: 2}
+  - {fileID: 7400000, guid: 90a0441dae8dc6f409e925892f8c7b8d, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 840, y: -84, z: 0}
   m_IKOnFeet: 0
@@ -743,7 +743,7 @@ State:
   m_Speed: 5
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: a8f5b0357a5b0da468558d26f7983f83, type: 2}
+  - {fileID: 7400000, guid: b034ea72f16cfbf4d86a72326e7edbe4, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 504, y: -228, z: 0}
   m_IKOnFeet: 0
