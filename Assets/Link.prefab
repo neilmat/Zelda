@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d374ce53263a1554a9c57bb1341a2df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPrefab: {fileID: 400000, guid: 280e253f25517574fbb4fb6cd7202fc9, type: 2}
+  shotPrefab: {fileID: 400000, guid: a031245dd8833f74985b47429cc2a0e8, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
