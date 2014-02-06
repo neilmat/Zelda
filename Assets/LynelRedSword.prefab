@@ -13,7 +13,7 @@ GameObject:
   - 50: {fileID: 5000000}
   - 114: {fileID: 11400000}
   m_Layer: 14
-  m_Name: LynelBlueSword
+  m_Name: LynelRedSword
   m_TagString: UnblockableProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300196, guid: a4135f09b7fc5c346ac449afad16683b, type: 3}
+  m_Sprite: {fileID: 21300226, guid: a4135f09b7fc5c346ac449afad16683b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

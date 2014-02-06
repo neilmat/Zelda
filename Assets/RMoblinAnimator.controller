@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: EnemyAnimator
+  m_Name: RMoblinAnimator
   serializedVersion: 2
   m_AnimatorParameters:
   - m_Name: Direction
@@ -780,20 +780,17 @@ StateMachine:
       - {fileID: 110149641}
       - {fileID: 110159795}
     data:
-      first: {fileID: 110234594}
-      second:
-      - {fileID: 110192231}
-    data:
       first: {fileID: 110232705}
       second:
       - {fileID: 110130638}
     data:
-      first: {fileID: 110293256}
+      first: {fileID: 110234594}
       second:
-      - {fileID: 110100000}
-      - {fileID: 110120312}
-      - {fileID: 110184032}
-      - {fileID: 110167525}
+      - {fileID: 110192231}
+    data:
+      first: {fileID: 110241372}
+      second:
+      - {fileID: 110104396}
     data:
       first: {fileID: 110257505}
       second:
@@ -801,10 +798,6 @@ StateMachine:
       - {fileID: 110181597}
       - {fileID: 110192051}
       - {fileID: 110192453}
-    data:
-      first: {fileID: 110241372}
-      second:
-      - {fileID: 110104396}
     data:
       first: {fileID: 110258581}
       second:
@@ -816,6 +809,13 @@ StateMachine:
       - {fileID: 110148483}
       - {fileID: 110176579}
       - {fileID: 110164366}
+    data:
+      first: {fileID: 110293256}
+      second:
+      - {fileID: 110100000}
+      - {fileID: 110120312}
+      - {fileID: 110184032}
+      - {fileID: 110167525}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 732, y: -324, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
