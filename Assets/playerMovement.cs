@@ -16,8 +16,10 @@ public class playerMovement : MonoBehaviour {
 		float v = Input.GetAxis ("Vertical");
 
 		Vector2 vel = rigidbody2D.velocity;
-		vel.x = speed * h;
-		vel.y = speed * v;
+		vel.x = vel.y = 0;
+
+		if(v != 0)vel.y = speed * v;
+		else vel.x = speed * h;
 
 		rigidbody2D.velocity = vel;
 	}

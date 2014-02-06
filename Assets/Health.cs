@@ -10,9 +10,19 @@ public class Health : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D col)
 	{
+		if (col.CompareTag ("PlayerProjectile"))
+		{
+			health -= col.gameObject.GetComponent<ProjectileScript>().damage;
+			Destroy(col.gameObject);
+			if(health <= 0) 
+			{
+				drop();
+				Destroy(this.gameObject);
+			}
+		}
 		if(!col.CompareTag("Player") || !playerState.attacking) return;
 		health--;
-		if(health == 0) 
+		if(health <= 0) 
 		{
 			drop();
 			Destroy(this.gameObject);

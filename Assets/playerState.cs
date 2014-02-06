@@ -9,6 +9,7 @@ public class playerState : MonoBehaviour {
 	public static int facing = 0;
 	public static bool attacking = false;
 	public static int money;
+	public static bool canShoot = true;
 
 	void Update(){
 		if(health > maxHealth)

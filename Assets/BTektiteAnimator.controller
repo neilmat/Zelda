@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: RTektiteAnimator
+  m_Name: BTektiteAnimator
   serializedVersion: 2
   m_AnimatorParameters:
   - m_Name: Jumping
@@ -125,7 +125,7 @@ State:
   m_Speed: 5
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: c1b7cb45718bc95449c75874d0856acb, type: 2}
+  - {fileID: 7400000, guid: cc6df7a353e6f4740a4ca57936d869a1, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -140,7 +140,7 @@ State:
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 3c273e280cf2517439831036b8b5cd1b, type: 2}
+  - {fileID: 7400000, guid: 464645ad1ef9ed443827501ab583ace4, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 336, y: 48, z: 0}
   m_IKOnFeet: 0
@@ -155,7 +155,7 @@ State:
   m_Speed: 5
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 3c273e280cf2517439831036b8b5cd1b, type: 2}
+  - {fileID: 7400000, guid: 464645ad1ef9ed443827501ab583ace4, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 48, y: -96, z: 0}
   m_IKOnFeet: 0
@@ -177,6 +177,11 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
+      first: {fileID: 110200000}
+      second:
+      - {fileID: 110100000}
+      - {fileID: 110151251}
+    data:
       first: {fileID: 110204169}
       second:
       - {fileID: 110116396}
@@ -185,11 +190,6 @@ StateMachine:
       second:
       - {fileID: 110153179}
       - {fileID: 110144461}
-    data:
-      first: {fileID: 110200000}
-      second:
-      - {fileID: 110100000}
-      - {fileID: 110151251}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 372, y: -144, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

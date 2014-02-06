@@ -7,11 +7,13 @@ public class playerController : MonoBehaviour {
 	private int timer;
 	private float attackTimer;
 	private BoxCollider2D sword;
+	private int shootTimer;
 	// Use this for initialization
 	void Start () {
 		animator = this.GetComponent<Animator>();
 		timer = 20;
 		attackTimer = 0;
+		shootTimer = 1;
 		sword = this.gameObject.AddComponent<BoxCollider2D> ();
 		sword.isTrigger = true;
 		sheathe ();
@@ -32,6 +34,9 @@ public class playerController : MonoBehaviour {
 			return;
 		}
 
+		if(playerState.health == playerState.maxHealth && Input.GetKeyDown(KeyCode.X)) shootTimer--;
+		else shootTimer = 1;
+		if(shootTimer == 0) shootSword();
 		if(playerState.attacking)
 		{
 			attackTimer += Time.deltaTime;
@@ -78,8 +83,9 @@ public class playerController : MonoBehaviour {
 			{
 				timer--;
 			}
+			return;
 		}
-		if (vertical < 0) 
+		else if (vertical < 0) 
 		{
 			playerState.facing = 0;
 			if(curr_direction == 0 && timer == 0)
@@ -101,8 +107,9 @@ public class playerController : MonoBehaviour {
 			{
 				timer--;
 			}
+			return;
 		}
-		if (horizontal > 0) 
+		else if (horizontal > 0) 
 		{
 			playerState.facing = 3;
 			if(curr_direction == 3 && timer == 0)
@@ -124,8 +131,9 @@ public class playerController : MonoBehaviour {
 			{
 				timer--;
 			}
+			return;
 		}
-		if (horizontal < 0) 
+		else if (horizontal < 0) 
 		{
 			playerState.facing = 1;
 			if(curr_direction == 1 && timer == 0)
@@ -147,8 +155,40 @@ public class playerController : MonoBehaviour {
 			{
 				timer--;
 			}
+			return;
 		}
 
+	}
+
+	void shootSword()
+	{
+		if(!playerState.canShoot) return;
+		int speed = 10;
+		int direction = playerState.facing;
+		int rotate = 0;
+		Vector2 vel = Vector2.zero;
+		
+		if(direction == 0)
+		{
+			vel.y = -speed;
+		}
+		else if(direction == 1) 
+		{
+			vel.x = -speed;
+			rotate = -90;
+		}
+		else if(direction == 2) 
+		{
+			vel.y = speed;
+			rotate = 180;
+		}
+		else if(direction == 3) 
+		{
+			vel.x = speed;
+			rotate = 90;
+		}
+		
+		this.gameObject.GetComponent<FireProjectile> ().fire (vel, rotate);
 	}
 
 	void extendSword()
